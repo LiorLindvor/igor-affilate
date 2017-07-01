@@ -1,7 +1,7 @@
 /**************************
-	RESET 
+	RESET
 ***************************/
-		
+
 		@import url(https://fonts.googleapis.com/css?family=Patua+One|Fira+Sans:300,400,700|Montserrat);
 
 		body {
@@ -24,12 +24,12 @@
 			font-weight: lighter;
 			margin: 0 0 20px;
 		}
-		
+
 		img {
 			max-width: 100%;
 			height: auto;
 		}
-		
+
 		a:link,
 		a:visited,
 		a:hover,
@@ -42,8 +42,8 @@
 			font-weight: normal;
 		}
 
-  
-	
+
+
 /**************************
 	GLOBALS
 ***************************/
@@ -51,8 +51,8 @@
 	.ff-patuaone {
 		font-family: 'Patua One', cursive;
 	}
-	
-	
+
+
 /**************************
 	HEADER
 ***************************/
@@ -87,11 +87,11 @@
 	}
 
 
-	
+
 /**************************
 	VIDEO
 ***************************/
-	
+
 	.igor-affilates-video {
 		background-color: #f7f7fa;
 		background-image: url('../images/light-bg-icons.png'), url('../images/video-stars.png');
@@ -124,7 +124,7 @@
 	}
 
 
-	
+
 /**************************
 	PRODUCT
 ***************************/
@@ -149,7 +149,7 @@
 	}
 
 
-	
+
 /**************************
 	PROFIT
 ***************************/
@@ -201,7 +201,7 @@
 		padding: 80px 0;
 		color: #cfc8da;
 	}
-	
+
 	.igor-affilates-target h2 {
 		color: #8ed299;
 		font-size: 33px;
@@ -223,7 +223,7 @@
 ***************************/
 
 	.igor-affilates-information {
-		background-image: url('../images/light-bg-icons.png');
+		background-image: url('../images/light-bg-icons-2.png');
 		background-position: center center;
 		-webkit-background-size: auto 95%;
 		background-size: auto 95%;
@@ -267,7 +267,7 @@
 
 	a.igor-affilates-information-link:hover,
 	a.igor-affilates-information-link:active {
-		
+
 	}
 
 	.igor-affilates-information-mail {
@@ -289,10 +289,101 @@
 
 
 /**************************
-	FOOTER
+	PAYMENTS
 ***************************/
 
+	.igor-affilates-payments {
+		background-color: #2e2c3f;
+		padding: 70px 20px 60px;
+	}
 
+	.igor-affilates-payments-title {
+		font-size: 26px;
+		color: #8ed299;
+		margin-bottom: 70px;
+    display: inline-block;
+	}
+
+	.igor-affilates-payments-slider {
+
+	}
+
+	.igor-affilates-payments-slider .row {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	.igor-affilates-payments-slider .row > div {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.igor-affilates-payments-slider-item {
+		opacity: 0.1;
+	}
+
+	.igor-affilates-payments-slider-item img {
+		transform: scale(0.8);
+	}
+
+	.igor-affilates-payments-slider-item.active {
+		opacity: 1;
+		position: relative;
+	}
+
+	.igor-affilates-payments-slider-item.active img {
+		transform: scale(1.3);
+	}
+
+	.igor-affilates-payments-title {
+		position: relative;
+	}
+	.igor-affilates-payments-title::after {
+		content: "";
+		position: absolute;
+		right: -40px;
+
+		background-image: url('../images/payments-arrow.png');
+		-webkit-background-size: 100% 100%;
+		background-size: 100% 100%;
+		width: 62px;
+		height: 122px;
+		z-index: 999999;
+		display: block;
+	}
+
+	.igor-affilates-payments-slider-item-prev,
+	.igor-affilates-payments-slider-item-next, .slick-arrow {
+		background-color: transparent;
+		border: 0;
+		padding: 0;
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		margin-top: -6px;
+		-webkit-background-size: 100% 100%;
+		background-size: 100% 100%;
+		width: 24px;
+		height: 12px;
+		content: '';
+		text-indent: -9999px;
+		z-index: 999999;
+	}
+
+	.igor-affilates-payments-slider-item-prev, .slick-prev {
+		left: 420px;
+		background-image: url('../images/arrow-left.png');
+	}
+
+	.igor-affilates-payments-slider-item-next, .slick-next {
+		right: 420px;
+		background-image: url('../images/arrow-right.png');
+	}
+
+
+/**************************
+	FOOTER
+***************************/
 
 	footer {
 		background-color: #1b2034;
@@ -417,6 +508,56 @@
 
 
 
+	/* 1800px */
+
+		@media (max-width: 1799px) {
+
+		}
+
+
+
+	/* 1600px */
+
+		@media (max-width: 1599px) {
+			.igor-affilates-payments-slider-item.active::after {
+				top: -40%;
+			}
+		}
+
+
+
+	/* 1400px */
+
+		@media (max-width: 1399px) {
+			.igor-affilates-payments-title::after {
+				display: none;
+			}
+			.igor-affilates-payments-title {
+				margin-bottom: 50px;
+			}
+		}
+
+
+	/* 1200px */
+
+		@media (max-width: 1199px) {
+
+			.slick-active img {
+				transform: none;
+				width: 100%
+			}
+			.igor-affilates-payments-slider-item-prev, .slick-prev {
+				left: 0;
+			}
+			.igor-affilates-payments-slider-item-next, .slick-next {
+				right: 0;
+			}
+
+			.slick-active{ opacity: 1; }
+		}
+
+
+
 	/* 992px */
 
 		@media (max-width: 991px) {
@@ -525,18 +666,17 @@
 			.igor-affilates-information h3 span {
 				left: 0;
 			}
+			.igor-affilates-payments-title {
+				font-size: 20px;
+				margin-bottom: 30px;
+			}
 		}
 
 	/* 600px */
 
 		@media (max-width: 599px) {
-			.igor-affilates-video {
-				padding: 150px 0 60px;
-			}
 			.igor-affilates-video-block-arrow {
-				top: -110px;
-				right: 50%;
-				margin-right: -35px;
+				display: none;
 			}
 			.igor-affilates-video-block {
 				width: 400px;
@@ -551,5 +691,22 @@
 			.igor-affilates-video-block {
 				width: 300px;
 				height: 174px;
+			}
+			.igor-affilates-payments-title {
+				font-size: 17px;
+			}
+		}
+
+
+
+	/* 380px */
+
+		@media (max-width: 379px) {
+			.igor-affilates-video-block {
+				width: 280px;
+				height: 162px;
+			}
+			.igor-affilates-payments-title br {
+				display: none;
 			}
 		}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,7 @@
 		<!-- Styles -->
 		<link href="interface/css/bootstrap.min.css" rel="stylesheet">
 		<link href="interface/css/styles.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -19,6 +20,8 @@
 	</head>
 
 	<body>
+
+
 		<header class="text-center">
 			<div class="container container-small">
 				<div class="igor-affilates-header-logo">
@@ -147,6 +150,33 @@
 			</div>
 		</section>
 
+		<section class="igor-affilates-payments text-center">
+			<p class="igor-affilates-payments-title ff-patuaone">
+				Here’s What We’ve Been Paying Out To<br />
+				Early Bird Affiliates In The Recent Months
+			</p>
+			<div class="igor-affilates-payments-slider">
+				<div class="row">
+					<div class="col-12">
+						<div class="payment-slider-items">
+							<div class="igor-affilates-payments-slider-item">
+								<img src="interface/images/payments-1.jpg" alt="" />
+							</div>
+							<div class="igor-affilates-payments-slider-item">
+								<img src="interface/images/payments-1.jpg" alt="" />
+							</div>
+							<div class="igor-affilates-payments-slider-item">
+								<img src="interface/images/payments-1.jpg" alt="" />
+							</div>
+							<div class="igor-affilates-payments-slider-item">
+								<img src="interface/images/payments-1.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 	  <footer>
       <div class="container">
 				<div class="row">
@@ -177,10 +207,69 @@
 			</div>
 	  </footer>
 
+
+
 		<!-- Scripts -->
 		<script src="interface/js/jquery-3.2.1.min.js"></script>
 		<script src="interface/js/tether.min.js"></script>
 		<script src="interface/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+		<script>
+
+		$('.payment-slider-items').slick({
+		  infinite: true,
+		  slidesToShow: 3,
+		  slidesToScroll: 1,
+			responsive: [{
+				breakpoint: 1199,
+				settings: {
+						dots: false,
+						slidesToShow: 1,
+						slidesToScroll: 1
+				}
+			}]
+		});
+
+		$(".slick-active:eq(1)").addClass("active");
+
+		//---------------------------------------------------------------
+
+		$('.payment-slider-items').on('beforeChange', function(event, slick, currentSlide, nextSlide)
+		{
+			$(".igor-affilates-payments-slider-item").removeClass("active");
+		});
+
+		//---------------------------------------------------------------
+
+		$('.payment-slider-items').on('afterChange', function(event, slick, currentSlide, nextSlide){
+			var direction = 'next';
+			if (currentSlide === 0 && nextSlide === slick.$slides.length - 1)
+			{
+					//---------------------------------------------------------------
+					// its going from the first slide to the last slide (backwards)
+					//---------------------------------------------------------------
+					direction = 'prev';
+			}
+			else if (nextSlide > currentSlide || (currentSlide === (slick.$slides.length - 1) && nextSlide === 0 ))
+			{
+					//---------------------------------------------------------------
+					// its either going normally forwards or going from the last slide to the first
+					//---------------------------------------------------------------
+					direction = 'next';
+			}
+			else
+			{
+					direction = 'prev';
+			}
+
+			//---------------------------------------------------------------
+
+			if( direction == 'next' )
+				$(".slick-active:eq(1)").addClass("active");
+			else
+				$(".slick-active:eq(1)").addClass("active");
+		});
+		</script>
 		<script src="interface/js/scripts.js"></script>
 	</body>
 </html>
